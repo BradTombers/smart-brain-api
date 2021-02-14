@@ -8,8 +8,8 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
 const db = knex({
-  client: 'pg',
-    connection : 'process.env.DATABASE_URL'
+  client: "pg",
+  connection: process.env.DATABASE_URL
 });
 
 
