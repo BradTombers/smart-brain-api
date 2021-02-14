@@ -5,7 +5,6 @@ const handleRegister = (req, res, db, bcrypt) => {
 	console.log('name: ', name);
 	console.log('password: ', password);
 	if(!email || !name || !password){
-		console.log('in error');
 		return res.status(400).json('incorrect form submission');
 	}
 
@@ -32,7 +31,10 @@ const handleRegister = (req, res, db, bcrypt) => {
 		.then(trx.commit)
 		.catch(trx.rollback)
 	})
-	.catch(err => res.status(400).json('unable to register'))
+	.catch(err => {
+		console.log('error, unable to register')
+		res.status(400).json('unable to register')
+	})
 }
 
 
