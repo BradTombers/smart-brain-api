@@ -1,9 +1,9 @@
 const handleRegister = (req, res, db, bcrypt) => {
 	const { email, name, password }= req.body;	
 
-	console.log('email: ' email);
-	console.log('name: ' name);
-	console.log('password: ' password);
+	console.log('email: ', email);
+	console.log('name: ', name);
+	console.log('password: ', password);
 	if(!email || !name || !password){
 		console.log('in error');
 		return res.status(400).json('incorrect form submission');
